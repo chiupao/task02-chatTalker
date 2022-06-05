@@ -4,16 +4,22 @@
   max-width: 1228px;
   margin: 0 auto;
   padding: 0 70px;
-}
-@media (max-width: 575px) {
-  .container {
+  @media (max-width: 575px) {
     padding: 0 48px;
-    // 手機版左右間距 20px
   }
-}
-@media (max-width: 375px) {
-  .container {
+  @media (max-width: 375px) {
     padding: 0 20px;
     // 手機版左右間距 20px
   }
+}
+
+.sectionMargin {
+  margin: 100px 0;
+  @media (max-width: 575px) {
+    margin: 60px 0;
+  }
+}
+
+.t-center {
+  text-align: center;
 }

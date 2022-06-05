@@ -167,8 +167,16 @@ p {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 32px;
+  line-height: 46px;
   font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: 28px;
+    line-height: 40px;
+  }
 }
 
 .container {
@@ -189,8 +197,38 @@ h2 {
   }
 }
 
+.sectionMargin {
+  margin: 100px 0;
+}
+
+@media (max-width: 575px) {
+  .sectionMargin {
+    margin: 60px 0;
+  }
+}
+
+.t-center {
+  text-align: center;
+}
+
 * {
   outline: 1px solid #333;
+}
+
+.programBtn {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #56c4c5;
+  color: #fff;
+  border-radius: 27px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.programBtn:hover {
+  background-color: #6dcccd;
 }
 
 .scrollTopBtn {
@@ -208,6 +246,8 @@ h2 {
   text-align: center;
   line-height: 71px;
   z-index: 5;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .scrollTopBtn:hover {
@@ -235,7 +275,7 @@ h2 {
 @media (max-width: 575px) {
   .header {
     background-image: url("../images/bg_home_sm.svg");
-    background-position: center calc(100vh - 277px);
+    background-position: center 95%;
     background-size: 90vw auto;
   }
 }
@@ -390,43 +430,204 @@ h2 {
   z-index: -5;
 }
 
+@media (max-width: 575px) {
+  .heroBall {
+    width: 49px;
+    height: 126px;
+    top: calc(100vh + 75px);
+    background-size: 126px;
+  }
+}
+
+.socialList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 48px;
+}
+
+@media (max-width: 767px) {
+  .socialList {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 8px;
+  }
+}
+
+.socialList .socialItem {
+  text-align: center;
+  max-width: 23%;
+}
+
+@media (max-width: 767px) {
+  .socialList .socialItem {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+}
+
+.socialList .socialItem p {
+  color: #747474;
+}
+
+.socialList .socialImg {
+  max-width: 90px;
+  vertical-align: top;
+}
+
+@media (max-width: 767px) {
+  .socialList .socialImg {
+    max-width: 60px;
+  }
+}
+
+.socialList .socialItemTitle {
+  font-size: 24px;
+  line-height: 35px;
+  font-weight: bold;
+  margin: 24px 0;
+}
+
+@media (max-width: 767px) {
+  .socialList .socialItemTitle {
+    font-size: 18px;
+    line-height: 26px;
+    margin: 16px 0;
+  }
+}
+
+.chatRole {
+  position: relative;
+}
+
+.chatRole .roleBall {
+  width: 210px;
+  height: 310px;
+  background-image: url("../images/ball02.svg");
+  background-position: left center;
+  background-size: 310px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  bottom: -193px;
+  z-index: -5;
+}
+
+@media (max-width: 375px) {
+  .chatRole .roleBall {
+    width: 88px;
+    height: 135px;
+    background-size: 135px;
+    bottom: -8px;
+  }
+}
+
+.chatRoleText {
+  font-size: 20px;
+  line-height: 29px;
+  margin-top: 16px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 767px) {
+  .chatRoleText {
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+.roleList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .roleList {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+.roleList .roleItem {
+  width: 23.8%;
+  padding-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 10px #00000014;
+          box-shadow: 0px 2px 10px #00000014;
+}
+
+@media (max-width: 767px) {
+  .roleList .roleItem {
+    width: 45%;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .roleList .roleItem {
+    width: 77.6%;
+    margin-bottom: 24px;
+  }
+}
+
+.roleList .roleImg {
+  vertical-align: top;
+}
+
+.roleList .roleItemTitle {
+  color: #56c4c5;
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+.chatFunction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.functionList {
+  width: 46.5%;
+}
+
+.chatFunctionIntro {
+  margin-left: 137px;
+}
+
+.chatFunctionIntro .introText {
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
 .chatProgram {
   background-image: url("../images/home_footer.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top center;
+  padding-top: 260px;
   height: 503px;
-  position: relative;
-}
-
-.chatProgram .programText {
-  position: absolute;
-  top: 260px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  line-height: 46px;
-  white-space: nowrap;
-}
-
-.chatProgram .programBtn {
-  position: absolute;
-  top: 354px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  padding: 12px 32px;
-  background-color: #56c4c5;
-  color: #fff;
-  border-radius: 27px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  font-size: 18px;
-  line-height: 25px;
-}
-
-.chatProgram .programBtn:hover {
-  background-color: #6dcccd;
+  text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -436,11 +637,7 @@ h2 {
     background-size: cover, 80px, 80px;
     background-position: top center, 93% 200px, 5% 230px;
     height: 461px;
-  }
-  .chatProgram .programText {
-    font-size: 24px;
-    top: 293px;
-    line-height: 35px;
+    padding-top: 293px;
   }
 }
 
@@ -448,6 +645,20 @@ h2 {
   .chatProgram {
     background-image: url("../images/footer_sm.svg");
     background-size: contain;
+  }
+}
+
+.chatProgram .programText {
+  line-height: 46px;
+  white-space: nowrap;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 767px) {
+  .chatProgram .programText {
+    font-size: 24px;
+    line-height: 35px;
+    margin-bottom: 24px;
   }
 }
 
