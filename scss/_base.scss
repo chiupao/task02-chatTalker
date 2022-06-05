@@ -1,0 +1,44 @@
+// 全站設定
+
+// 引入 google font
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Noto+Sans+TC:wght@400;700&family=Wendy+One&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $f-NotoSans;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $c-black;
+}
+
+h2 {
+  font-size: 2rem; // 32px
+  font-weight: bold;
+}

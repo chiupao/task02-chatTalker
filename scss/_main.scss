@@ -1,0 +1,214 @@
+* {
+  outline: 1px solid #333;
+}
+
+.scrollTopBtn {
+  display: block;
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+  position: fixed;
+  right: 48px;
+  bottom: 23px;
+  background-color: $c-primary;
+  font-family: $f-WendyOne;
+  font-size: 18px;
+  color: $c-white;
+  text-align: center;
+  line-height: 71px;
+  z-index: 5;
+  &:hover {
+    background-color: lighten($c-primary, 6%);
+  }
+  @media (max-width: 375px) {
+    width: 50px;
+    height: 50px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 14px;
+    line-height: 50px;
+  }
+}
+
+// ----- header -----
+.header {
+  background-image: url("../images/bg_home.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: auto 100vh;
+  @media (max-width: 575px) {
+    background-image: url("../images/bg_home_sm.svg");
+    background-position: center calc(100vh - 277px);
+    background-size: 90vw auto;
+  }
+
+  .container {
+    height: 100vh;
+  }
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  @media (max-width: 575px) {
+    border-bottom: 2px solid $c-yellow;
+    padding: 24px 48px;
+    margin: 0 -48px;
+  }
+  @media (max-width: 375px) {
+    padding: 24px 20px;
+    margin: 0 -20px;
+  }
+
+  .logo {
+    // 圖片要設置 block 否則多個高度
+    display: block;
+    max-height: 40px;
+    @media (max-width: 575px) {
+      max-height: 32px;
+      padding-right: 20px;
+    }
+    @media (max-width: 375px) {
+      max-height: 24px;
+    }
+  }
+
+  .headerBtn {
+    padding: 8px 32px;
+    background-color: $c-red;
+    color: $c-white;
+    border-radius: 22px;
+    transition: 0.4s;
+    white-space: nowrap;
+    &:hover {
+      background-color: lighten($c-red, 6%);
+    }
+  }
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  height: 70vh; // 534px/視窗768px
+  @media (max-width: 575px) {
+    flex-wrap: wrap;
+    margin-top: 32px;
+    height: auto;
+  }
+
+  .headerTitle {
+    color: $c-primary;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .headerText {
+    font-size: 48px;
+    line-height: 70px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    @media (max-width: 767px) {
+      font-size: 32px;
+      line-height: 46px;
+    }
+  }
+
+  .headerSubTitle {
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: normal;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+
+  .headerImg {
+    max-width: 48.2%;
+    @media (max-width: 575px) {
+      max-width: 90%;
+      margin: 32px auto 0 auto;
+    }
+  }
+}
+
+.heroBall {
+  width: 138px;
+  height: 360px;
+  background-image: url("../images/ball01.svg");
+  background-position: right;
+  position: absolute;
+  top: calc(100vh - 180px);
+  z-index: -5;
+}
+
+// ----- chatProgram -----
+.chatProgram {
+  background-image: url("../images/home_footer.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  height: 503px;
+  position: relative;
+  .programText {
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 46px;
+    white-space: nowrap;
+  }
+  .programBtn {
+    position: absolute;
+    top: 354px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 32px;
+    background-color: $c-primary;
+    color: $c-white;
+    border-radius: 27px;
+    transition: 0.4s;
+    font-size: 18px;
+    line-height: 25px;
+    &:hover {
+      background-color: lighten($c-primary, 6%);
+    }
+  }
+}
+@media (max-width: 767px) {
+  .chatProgram {
+    background-image: url("../images/home_footer.svg"), url("../images/talk01.svg"), url("../images/talk04.svg");
+    background-repeat: no-repeat;
+    background-size: cover, 80px, 80px;
+    background-position: top center, 93% 200px, 5% 230px;
+    height: 461px;
+    .programText {
+      font-size: 24px;
+      top: 293px;
+      line-height: 35px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .chatProgram {
+    background-image: url("../images/footer_sm.svg");
+    background-size: contain;
+  }
+}
+
+// ----- footer -----
+.footer {
+  text-align: center;
+  background-color: $c-grey;
+  padding: 16px 0;
+}

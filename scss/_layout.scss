@@ -1,0 +1,19 @@
+// 佈局
+
+.container {
+  max-width: 1228px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+@media (max-width: 575px) {
+  .container {
+    padding: 0 48px;
+    // 手機版左右間距 20px
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    padding: 0 20px;
+    // 手機版左右間距 20px
+  }
+}

@@ -1,0 +1,459 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Noto+Sans+TC:wght@400;700&family=Wendy+One&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #221e1f;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1228px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+@media (max-width: 575px) {
+  .container {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+* {
+  outline: 1px solid #333;
+}
+
+.scrollTopBtn {
+  display: block;
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+  position: fixed;
+  right: 48px;
+  bottom: 23px;
+  background-color: #56c4c5;
+  font-family: "Wendy One", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 71px;
+  z-index: 5;
+}
+
+.scrollTopBtn:hover {
+  background-color: #6dcccd;
+}
+
+@media (max-width: 375px) {
+  .scrollTopBtn {
+    width: 50px;
+    height: 50px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 14px;
+    line-height: 50px;
+  }
+}
+
+.header {
+  background-image: url("../images/bg_home.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: auto 100vh;
+}
+
+@media (max-width: 575px) {
+  .header {
+    background-image: url("../images/bg_home_sm.svg");
+    background-position: center calc(100vh - 277px);
+    background-size: 90vw auto;
+  }
+}
+
+.header .container {
+  height: 100vh;
+}
+
+.headerTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 24px 0;
+}
+
+@media (max-width: 575px) {
+  .headerTop {
+    border-bottom: 2px solid #ffd153;
+    padding: 24px 48px;
+    margin: 0 -48px;
+  }
+}
+
+@media (max-width: 375px) {
+  .headerTop {
+    padding: 24px 20px;
+    margin: 0 -20px;
+  }
+}
+
+.headerTop .logo {
+  display: block;
+  max-height: 40px;
+}
+
+@media (max-width: 575px) {
+  .headerTop .logo {
+    max-height: 32px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .headerTop .logo {
+    max-height: 24px;
+  }
+}
+
+.headerTop .headerBtn {
+  padding: 8px 32px;
+  background-color: #ff5d50;
+  color: #fff;
+  border-radius: 22px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  white-space: nowrap;
+}
+
+.headerTop .headerBtn:hover {
+  background-color: #ff796f;
+}
+
+.headerContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+  height: 70vh;
+}
+
+@media (max-width: 575px) {
+  .headerContent {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 32px;
+    height: auto;
+  }
+}
+
+.headerContent .headerTitle {
+  color: #56c4c5;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 767px) {
+  .headerContent .headerTitle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.headerContent .headerText {
+  font-size: 48px;
+  line-height: 70px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .headerContent .headerText {
+    font-size: 32px;
+    line-height: 46px;
+  }
+}
+
+.headerContent .headerSubTitle {
+  font-size: 20px;
+  line-height: 29px;
+  font-weight: normal;
+}
+
+@media (max-width: 767px) {
+  .headerContent .headerSubTitle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.headerContent .headerImg {
+  max-width: 48.2%;
+}
+
+@media (max-width: 575px) {
+  .headerContent .headerImg {
+    max-width: 90%;
+    margin: 32px auto 0 auto;
+  }
+}
+
+.heroBall {
+  width: 138px;
+  height: 360px;
+  background-image: url("../images/ball01.svg");
+  background-position: right;
+  position: absolute;
+  top: calc(100vh - 180px);
+  z-index: -5;
+}
+
+.chatProgram {
+  background-image: url("../images/home_footer.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  height: 503px;
+  position: relative;
+}
+
+.chatProgram .programText {
+  position: absolute;
+  top: 260px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  line-height: 46px;
+  white-space: nowrap;
+}
+
+.chatProgram .programBtn {
+  position: absolute;
+  top: 354px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 12px 32px;
+  background-color: #56c4c5;
+  color: #fff;
+  border-radius: 27px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.chatProgram .programBtn:hover {
+  background-color: #6dcccd;
+}
+
+@media (max-width: 767px) {
+  .chatProgram {
+    background-image: url("../images/home_footer.svg"), url("../images/talk01.svg"), url("../images/talk04.svg");
+    background-repeat: no-repeat;
+    background-size: cover, 80px, 80px;
+    background-position: top center, 93% 200px, 5% 230px;
+    height: 461px;
+  }
+  .chatProgram .programText {
+    font-size: 24px;
+    top: 293px;
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 375px) {
+  .chatProgram {
+    background-image: url("../images/footer_sm.svg");
+    background-size: contain;
+  }
+}
+
+.footer {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 16px 0;
+}
+/*# sourceMappingURL=all.css.map */
