@@ -1,1 +1,2 @@
-(chatTalker)[https://chiupao.github.io/task02-chatTalker/]
+[chatTalker]
+(https://chiupao.github.io/task02-chatTalker/)
