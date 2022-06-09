@@ -15,6 +15,12 @@
     />
     <title>chatTalker</title>
     <link rel="icon" href="./images/favicon-01.png" />
+    <!-- Swiper css -->
+    <!-- 要放在自訂 css 前，否則由上往下讀後，無法更改到樣式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./scss/all.css" />
   </head>
   <body>
@@ -88,56 +94,36 @@
     </section>
 
     <!-- chatRole -->
-    <section class="sectionMargin">
-      <div class="chatRole container">
+    <section class="chatRole sectionMargin">
+      <div class="container">
         <h2 class="t-center">任何的角色，我都能給</h2>
         <p class="chatRoleText t-center">
           量身打造您想要的專屬服務，幫助您迅速判斷成效、並加快決策
         </p>
         <ul class="roleList">
           <li class="roleItem">
-            <img
-              class="roleImg"
-              src="./images/ch01.svg"
-              alt="活動主 圖片"
-              title="活動主"
-            />
+            <img src="./images/ch01.svg" alt="活動主 圖片" title="活動主" />
             <h3 class="roleItemTitle">活動主</h3>
             <p>用戶數位足跡掌握在手<br />精準取得客戶輪廓，提供分析</p>
           </li>
           <li class="roleItem">
-            <img
-              class="roleImg"
-              src="./images/ch02.svg"
-              alt="創作者 圖片"
-              title="創作者"
-            />
+            <img src="./images/ch02.svg" alt="創作者 圖片" title="創作者" />
             <h3 class="roleItemTitle">創作者</h3>
             <p>自由設計互動腳本<br />輕鬆整合各項數據</p>
           </li>
           <li class="roleItem">
-            <img
-              class="roleImg"
-              src="./images/ch03.svg"
-              alt="企業品牌 圖片"
-              title="企業品牌"
-            />
+            <img src="./images/ch03.svg" alt="企業品牌 圖片" title="企業品牌" />
             <h3 class="roleItemTitle">企業品牌</h3>
             <p>多元資料整合，做出服務差異化<br />幫助企業加速決策</p>
           </li>
           <li class="roleItem">
-            <img
-              class="roleImg"
-              src="./images/ch04.svg"
-              alt="其他可能 圖片"
-              title="其他"
-            />
+            <img src="./images/ch04.svg" alt="其他可能 圖片" title="其他" />
             <h3 class="roleItemTitle">其他</h3>
             <p>創造更多可能...</p>
           </li>
         </ul>
-        <div class="roleBall"></div>
       </div>
+      <div class="roleBall"></div>
     </section>
 
     <!-- chatFunction -->
@@ -145,42 +131,50 @@
       <div class="chatFunction container">
         <ul class="functionList">
           <li class="functionItem">
-            <img
-              class="functionImg"
-              src="./images/icon01.svg"
-              alt="無敵轉換術 icon"
-              title="無敵轉換術"
-            />
+            <div class="functionImgBg">
+              <img
+                class="functionImg"
+                src="./images/icon01.svg"
+                alt="無敵轉換術 icon"
+                title="無敵轉換術"
+              />
+            </div>
             <h3 class="functionItemTitle">無敵轉換術</h3>
             <p>精準掌握客群來源<br />分析用戶轉化流程</p>
           </li>
           <li class="functionItem">
-            <img
-              class="functionImg"
-              src="./images/icon02.svg"
-              alt="聊天機器人 icon"
-              title="聊天機器人"
-            />
+            <div class="functionImgBg">
+              <img
+                class="functionImg"
+                src="./images/icon02.svg"
+                alt="聊天機器人 icon"
+                title="聊天機器人"
+              />
+            </div>
             <h3 class="functionItemTitle">聊天機器人</h3>
             <p>66款聊天機器人模組<br />自由設計聊天流程</p>
           </li>
           <li class="functionItem">
-            <img
-              class="functionImg"
-              src="./images/icon03.svg"
-              alt="一站式訊息中心 icon"
-              title="一站式訊息中心"
-            />
+            <div class="functionImgBg">
+              <img
+                class="functionImg"
+                src="./images/icon03.svg"
+                alt="一站式訊息中心 icon"
+                title="一站式訊息中心"
+              />
+            </div>
             <h3 class="functionItemTitle">一站式訊息中心</h3>
             <p>整合Messenger、LINE<br />和IG三大平台訊息</p>
           </li>
           <li class="functionItem">
-            <img
-              class="functionImg"
-              src="./images/icon04.svg"
-              alt="群發訊息 icon"
-              title="群發訊息"
-            />
+            <div class="functionImgBg">
+              <img
+                class="functionImg"
+                src="./images/icon04.svg"
+                alt="群發訊息 icon"
+                title="群發訊息"
+              />
+            </div>
             <h3 class="functionItemTitle">群發訊息</h3>
             <p>自由選定特定受眾<br />精準推送群發訊息</p>
           </li>
@@ -196,8 +190,366 @@
     </section>
 
     <!-- chatFeedback -->
-    <section class="sectionMargin"></section>
+    <section class="sectionMargin">
+      <div class="chatFeedback container">
+        <h2 class="t-center">好評如潮</h2>
+        <!-- swiper 開始 -->
+        <div class="swiper" id="comment-swiper">
+          <!-- swiper-wrapper 容器 -->
+          <ul class="feedbackList swiper-wrapper">
+            <!-- 要作為輪播子元素的區塊，需要加上 swiper-slide 這個 class，其餘 CSS 樣式則依照需求自行調整 -->
+            <li class="feedbackItem swiper-slide">
+              <img
+                class="userImg"
+                src="./images/user01.jpg"
+                alt="user image"
+                title="Lina 執行長"
+              />
+              <p class="feedbackText">
+                原來聊天機器人可以這麼有人性！團隊有完整的行銷計畫提供數位整合，讓我們公司的產品用更活潑的方式讓使用者認識。
+              </p>
+              <p class="userComp">清心寡慾設計公司</p>
+              <div class="userNameArea">
+                <p>Lina 執行長</p>
+                <ul class="starList">
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="feedbackItem swiper-slide">
+              <img
+                class="userImg"
+                src="./images/user02.jpg"
+                alt="user image"
+                title="Zoe 活動長"
+              />
+              <p class="feedbackText">
+                團隊很積極的協助行銷追蹤，針對機器人進行優化，讓我們一個月內提高10000個追蹤者，客戶體驗回饋很正面！
+              </p>
+              <p class="userComp">subWhat 行銷公司</p>
+              <div class="userNameArea">
+                <p>Zoe 活動長</p>
+                <ul class="starList">
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="feedbackItem swiper-slide">
+              <img
+                class="userImg"
+                src="./images/user03.jpg"
+                alt="user image"
+                title="HowBig"
+              />
+              <p class="feedbackText">
+                經營了好久的IG，一直無法提升粉絲數，和團隊合作後，才知道可以用聊天機器人玩這麼豐富的行銷活動！太讚拉～
+              </p>
+              <p class="userComp">油土伯</p>
+              <div class="userNameArea">
+                <p>HowBig</p>
+                <ul class="starList">
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="feedbackItem swiper-slide">
+              <img
+                class="userImg"
+                src="./images/user01.jpg"
+                alt="user image"
+                title="Lina 執行長"
+              />
+              <p class="feedbackText">
+                原來聊天機器人可以這麼有人性！團隊有完整的行銷計畫提供數位整合，讓我們公司的產品用更活潑的方式讓使用者認識。
+              </p>
+              <p class="userComp">清心寡慾設計公司</p>
+              <div class="userNameArea">
+                <p>Lina 執行長</p>
+                <ul class="starList">
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="feedbackItem swiper-slide">
+              <img
+                class="userImg"
+                src="./images/user02.jpg"
+                alt="user image"
+                title="Zoe 活動長"
+              />
+              <p class="feedbackText">
+                團隊很積極的協助行銷追蹤，針對機器人進行優化，讓我們一個月內提高10000個追蹤者，客戶體驗回饋很正面！
+              </p>
+              <p class="userComp">subWhat 行銷公司</p>
+              <div class="userNameArea">
+                <p>Zoe 活動長</p>
+                <ul class="starList">
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="feedbackItem swiper-slide">
+              <img
+                class="userImg"
+                src="./images/user03.jpg"
+                alt="user image"
+                title="HowBig"
+              />
+              <p class="feedbackText">
+                經營了好久的IG，一直無法提升粉絲數，和團隊合作後，才知道可以用聊天機器人玩這麼豐富的行銷活動！太讚拉～
+              </p>
+              <p class="userComp">油土伯</p>
+              <div class="userNameArea">
+                <p>HowBig</p>
+                <ul class="starList">
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="star"
+                      src="./images/icon_star.svg"
+                      alt="rank star"
+                      title="star"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-- swiper 套件的分頁圓點 -->
+          <div class="swiper-pagination"></div>
+        </div>
+        <!-- swiper 結束 -->
+        <div class="feedbackBall"></div>
+      </div>
+    </section>
 
+    <!-- chatProgram -->
     <section class="chatProgram">
       <h2 class="programText">\ 美好用戶體驗，從對話開始 /</h2>
       <a class="programBtn" href="program.html">方案費用</a>
@@ -206,5 +558,10 @@
     <footer class="footer">
       <p>© 2022 chatTalker. All Rights Reserved.</p>
     </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <script src="./all.js"></script>
   </body>
 </html>

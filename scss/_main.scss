@@ -1,5 +1,35 @@
-* {
-  outline: 1px solid #333;
+// * {
+//   outline: 1px solid #333;
+// }
+
+// ----- Swiper -----
+// 找到其 css 連結 查找修改樣式
+:root {
+  --swiper-theme-color: #f5ca52;
+}
+
+.swiper {
+  padding: 0 16px 0 0; // 讓卡片陰影顯示
+}
+.swiper-wrapper {
+  padding: 0 0 0 8px; // 讓卡片陰影顯示
+}
+
+.swiper-slide {
+  height: initial; // 讓卡片高度一致
+}
+
+// 將底部 pagination 分頁的 active 狀態改為想要的樣式
+.swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 8px;
+}
+
+// 讓分頁圓點移至下方
+.swiper-pagination {
+  position: static;
+  margin-top: 24px;
+  line-height: 0;
 }
 
 // ----- 共用 -----
@@ -62,6 +92,22 @@
   .container {
     height: 100vh;
   }
+
+  .heroBall {
+    width: 138px;
+    height: 360px;
+    background-image: url("../images/ball01.svg");
+    background-position: right;
+    position: absolute;
+    top: calc(100vh - 180px);
+    z-index: -5;
+    @media (max-width: 575px) {
+      width: 49px;
+      height: 126px;
+      top: calc(100vh + 75px);
+      background-size: 126px;
+    }
+  }
 }
 
 .headerTop {
@@ -81,7 +127,7 @@
 
   .logo {
     // 圖片要設置 block 否則多個高度
-    display: block;
+    // display: block;
     max-height: 40px;
     @media (max-width: 575px) {
       max-height: 32px;
@@ -159,22 +205,6 @@
   }
 }
 
-.heroBall {
-  width: 138px;
-  height: 360px;
-  background-image: url("../images/ball01.svg");
-  background-position: right;
-  position: absolute;
-  top: calc(100vh - 180px);
-  z-index: -5;
-  @media (max-width: 575px) {
-    width: 49px;
-    height: 126px;
-    top: calc(100vh + 75px);
-    background-size: 126px;
-  }
-}
-
 // ----- chatSocial -----
 .socialList {
   display: flex;
@@ -199,7 +229,6 @@
 
   .socialImg {
     max-width: 90px;
-    vertical-align: top;
     @media (max-width: 767px) {
       max-width: 60px;
     }
@@ -267,7 +296,7 @@
     border-radius: 12px;
     overflow: hidden;
     background-color: $c-white;
-    box-shadow: 0px 2px 10px #00000014;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
     @media (max-width: 767px) {
       width: 45%;
       margin-bottom: 24px;
@@ -276,10 +305,10 @@
       width: 77.6%;
       margin-bottom: 24px;
     }
-  }
 
-  .roleImg {
-    vertical-align: top;
+    p {
+      padding: 0 16px;
+    }
   }
 
   .roleItemTitle {
@@ -293,17 +322,155 @@
 .chatFunction {
   display: flex;
   align-items: center;
+  @media (max-width: 992px) {
+    flex-direction: column-reverse;
+  }
 }
+
 .functionList {
-  width: 46.5%;
+  max-width: 46.5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -28px;
+  @media (max-width: 992px) {
+    max-width: 100%;
+    justify-content: space-evenly;
+  }
+  @media (max-width: 575px) {
+    margin-bottom: -24px;
+  }
+
+  .functionItem {
+    width: 45%;
+    padding: 32px 32px 48px 32px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+    margin-bottom: 28px;
+    @media (max-width: 575px) {
+      width: 68.6%;
+      margin-bottom: 24px;
+    }
+  }
+
+  .functionImgBg {
+    display: inline-block;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background-color: $c-white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+    text-align: center;
+
+    .functionImg {
+      margin-top: 43px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .functionItemTitle {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
 }
 .chatFunctionIntro {
-  margin-left: 137px;
+  margin-left: 13%;
+  @media (max-width: 992px) {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 32px;
+  }
   .introText {
     font-size: 18px;
     line-height: 26px;
     margin-top: 16px;
     margin-bottom: 24px;
+    @media (max-width: 992px) {
+      margin-bottom: 16px;
+    }
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+// ----- chatFeedback -----
+.chatFeedback {
+  position: relative;
+  .feedbackBall {
+    width: 150px;
+    height: 150px;
+    background-image: url("../images/ball03.svg");
+    background-size: 150px;
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    z-index: -5;
+    @media (max-width: 375px) {
+      width: 77px;
+      height: 153px;
+      background-size: 153px;
+      background-position: right center;
+    }
+  }
+}
+.feedbackList {
+  margin-top: 104px;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 375px) {
+    margin-top: 88px;
+  }
+
+  .feedbackItem {
+    background-color: $c-white;
+    width: 32.4%;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    position: relative;
+    padding: 48px 32px 24px 32px;
+  }
+
+  .userImg {
+    width: 80px;
+    border-radius: 50%;
+    position: absolute;
+    left: 32px;
+    top: -56px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+  }
+
+  .feedbackText {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $c-border-grey;
+  }
+
+  .userComp {
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+
+  .userNameArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .starList {
+    display: flex;
+    li {
+      height: 16px;
+    }
+    .star {
+      margin-right: 8.22px;
+      vertical-align: top;
+      height: 16px;
+    }
   }
 }
 

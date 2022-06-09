@@ -145,6 +145,7 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: top;
 }
 
 a {
@@ -211,8 +212,31 @@ h2 {
   text-align: center;
 }
 
-* {
-  outline: 1px solid #333;
+:root {
+  --swiper-theme-color: #f5ca52;
+}
+
+.swiper {
+  padding: 0 16px 0 0;
+}
+
+.swiper-wrapper {
+  padding: 0 0 0 8px;
+}
+
+.swiper-slide {
+  height: initial;
+}
+
+.swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 8px;
+}
+
+.swiper-pagination {
+  position: static;
+  margin-top: 24px;
+  line-height: 0;
 }
 
 .programBtn {
@@ -284,6 +308,25 @@ h2 {
   height: 100vh;
 }
 
+.header .heroBall {
+  width: 138px;
+  height: 360px;
+  background-image: url("../images/ball01.svg");
+  background-position: right;
+  position: absolute;
+  top: calc(100vh - 180px);
+  z-index: -5;
+}
+
+@media (max-width: 575px) {
+  .header .heroBall {
+    width: 49px;
+    height: 126px;
+    top: calc(100vh + 75px);
+    background-size: 126px;
+  }
+}
+
 .headerTop {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -313,7 +356,6 @@ h2 {
 }
 
 .headerTop .logo {
-  display: block;
   max-height: 40px;
 }
 
@@ -420,25 +462,6 @@ h2 {
   }
 }
 
-.heroBall {
-  width: 138px;
-  height: 360px;
-  background-image: url("../images/ball01.svg");
-  background-position: right;
-  position: absolute;
-  top: calc(100vh - 180px);
-  z-index: -5;
-}
-
-@media (max-width: 575px) {
-  .heroBall {
-    width: 49px;
-    height: 126px;
-    top: calc(100vh + 75px);
-    background-size: 126px;
-  }
-}
-
 .socialList {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -477,7 +500,6 @@ h2 {
 
 .socialList .socialImg {
   max-width: 90px;
-  vertical-align: top;
 }
 
 @media (max-width: 767px) {
@@ -568,8 +590,8 @@ h2 {
   border-radius: 12px;
   overflow: hidden;
   background-color: #fff;
-  -webkit-box-shadow: 0px 2px 10px #00000014;
-          box-shadow: 0px 2px 10px #00000014;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
 }
 
 @media (max-width: 767px) {
@@ -586,8 +608,8 @@ h2 {
   }
 }
 
-.roleList .roleImg {
-  vertical-align: top;
+.roleList .roleItem p {
+  padding: 0 16px;
 }
 
 .roleList .roleItemTitle {
@@ -605,12 +627,94 @@ h2 {
           align-items: center;
 }
 
+@media (max-width: 992px) {
+  .chatFunction {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
 .functionList {
-  width: 46.5%;
+  max-width: 46.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: -28px;
+}
+
+@media (max-width: 992px) {
+  .functionList {
+    max-width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 575px) {
+  .functionList {
+    margin-bottom: -24px;
+  }
+}
+
+.functionList .functionItem {
+  width: 45%;
+  padding: 32px 32px 48px 32px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+  margin-bottom: 28px;
+}
+
+@media (max-width: 575px) {
+  .functionList .functionItem {
+    width: 68.6%;
+    margin-bottom: 24px;
+  }
+}
+
+.functionList .functionImgBg {
+  display: inline-block;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+  text-align: center;
+}
+
+.functionList .functionImgBg .functionImg {
+  margin-top: 43px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.functionList .functionItemTitle {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 16px;
 }
 
 .chatFunctionIntro {
-  margin-left: 137px;
+  margin-left: 13%;
+}
+
+@media (max-width: 992px) {
+  .chatFunctionIntro {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 32px;
+  }
 }
 
 .chatFunctionIntro .introText {
@@ -618,6 +722,118 @@ h2 {
   line-height: 26px;
   margin-top: 16px;
   margin-bottom: 24px;
+}
+
+@media (max-width: 992px) {
+  .chatFunctionIntro .introText {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .chatFunctionIntro .introText {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.chatFeedback {
+  position: relative;
+}
+
+.chatFeedback .feedbackBall {
+  width: 150px;
+  height: 150px;
+  background-image: url("../images/ball03.svg");
+  background-size: 150px;
+  position: absolute;
+  top: 40px;
+  left: -20px;
+  z-index: -5;
+}
+
+@media (max-width: 375px) {
+  .chatFeedback .feedbackBall {
+    width: 77px;
+    height: 153px;
+    background-size: 153px;
+    background-position: right center;
+  }
+}
+
+.feedbackList {
+  margin-top: 104px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 375px) {
+  .feedbackList {
+    margin-top: 88px;
+  }
+}
+
+.feedbackList .feedbackItem {
+  background-color: #fff;
+  width: 32.4%;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
+  position: relative;
+  padding: 48px 32px 24px 32px;
+}
+
+.feedbackList .userImg {
+  width: 80px;
+  border-radius: 50%;
+  position: absolute;
+  left: 32px;
+  top: -56px;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.14);
+}
+
+.feedbackList .feedbackText {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.feedbackList .userComp {
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.feedbackList .userNameArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.feedbackList .starList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.feedbackList .starList li {
+  height: 16px;
+}
+
+.feedbackList .starList .star {
+  margin-right: 8.22px;
+  vertical-align: top;
+  height: 16px;
 }
 
 .chatProgram {
