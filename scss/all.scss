@@ -8,9 +8,12 @@
 @import "./base";
 
 // css
-@import "./layout";
+@import "./layout"; // 佈局
+@import "./component"; // 共用元件
+
+// 套件
+@import "./swiper";
 
 // 頁面
-@import "./main";
-
-// css 插件
+@import "./index";
+@import "./program";

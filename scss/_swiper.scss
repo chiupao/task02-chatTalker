@@ -1,0 +1,29 @@
+// ----- Swiper -----
+// 找到其 css 連結 查找修改樣式
+:root {
+  --swiper-theme-color: #f5ca52;
+}
+
+.swiper {
+  padding: 0 16px 0 0; // 讓卡片陰影顯示
+}
+.swiper-wrapper {
+  padding: 0 0 0 8px; // 讓卡片陰影顯示
+}
+
+.swiper-slide {
+  height: initial; // 讓卡片高度一致
+}
+
+// 將底部 pagination 分頁的 active 狀態改為想要的樣式
+.swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 8px;
+}
+
+// 讓分頁圓點移至下方
+.swiper-pagination {
+  position: static;
+  margin-top: 24px;
+  line-height: 0;
+}

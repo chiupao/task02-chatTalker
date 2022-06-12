@@ -2,81 +2,6 @@
 //   outline: 1px solid #333;
 // }
 
-// ----- Swiper -----
-// 找到其 css 連結 查找修改樣式
-:root {
-  --swiper-theme-color: #f5ca52;
-}
-
-.swiper {
-  padding: 0 16px 0 0; // 讓卡片陰影顯示
-}
-.swiper-wrapper {
-  padding: 0 0 0 8px; // 讓卡片陰影顯示
-}
-
-.swiper-slide {
-  height: initial; // 讓卡片高度一致
-}
-
-// 將底部 pagination 分頁的 active 狀態改為想要的樣式
-.swiper-pagination-bullet-active {
-  width: 20px;
-  border-radius: 8px;
-}
-
-// 讓分頁圓點移至下方
-.swiper-pagination {
-  position: static;
-  margin-top: 24px;
-  line-height: 0;
-}
-
-// ----- 共用 -----
-.programBtn {
-  display: inline-block;
-  padding: 12px 32px;
-  background-color: $c-primary;
-  color: $c-white;
-  border-radius: 27px;
-  transition: 0.4s;
-  font-size: 18px;
-  line-height: 25px;
-  &:hover {
-    background-color: lighten($c-primary, 6%);
-  }
-}
-
-// ----- top button -----
-.scrollTopBtn {
-  display: block;
-  width: 71px;
-  height: 71px;
-  border-radius: 50%;
-  position: fixed;
-  right: 48px;
-  bottom: 23px;
-  background-color: $c-primary;
-  font-family: $f-WendyOne;
-  font-size: 18px;
-  color: $c-white;
-  text-align: center;
-  line-height: 71px;
-  z-index: 5;
-  transition: 0.5s;
-  &:hover {
-    background-color: lighten($c-primary, 6%);
-  }
-  @media (max-width: 375px) {
-    width: 50px;
-    height: 50px;
-    right: 16px;
-    bottom: 16px;
-    font-size: 14px;
-    line-height: 50px;
-  }
-}
-
 // ----- header -----
 .header {
   background-image: url("../images/bg_home.svg");
@@ -106,47 +31,6 @@
       height: 126px;
       top: calc(100vh + 75px);
       background-size: 126px;
-    }
-  }
-}
-
-.headerTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 0;
-  @media (max-width: 575px) {
-    border-bottom: 2px solid $c-yellow;
-    padding: 24px 48px;
-    margin: 0 -48px;
-  }
-  @media (max-width: 375px) {
-    padding: 24px 20px;
-    margin: 0 -20px;
-  }
-
-  .logo {
-    // 圖片要設置 block 否則多個高度
-    // display: block;
-    max-height: 40px;
-    @media (max-width: 575px) {
-      max-height: 32px;
-      padding-right: 20px;
-    }
-    @media (max-width: 375px) {
-      max-height: 24px;
-    }
-  }
-
-  .headerBtn {
-    padding: 8px 32px;
-    background-color: $c-red;
-    color: $c-white;
-    border-radius: 22px;
-    transition: 0.4s;
-    white-space: nowrap;
-    &:hover {
-      background-color: lighten($c-red, 6%);
     }
   }
 }
@@ -506,11 +390,4 @@
       margin-bottom: 24px;
     }
   }
-}
-
-// ----- footer -----
-.footer {
-  text-align: center;
-  background-color: $c-grey;
-  padding: 16px 0;
 }
